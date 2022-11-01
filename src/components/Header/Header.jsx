@@ -4,14 +4,13 @@ import React from "react";
 const Header = () => {
     return (
         <header className="header">
-            <svg></svg>
-            <p className="header__title">Messages.</p>
-            <li>
-                <a>
+            <p className="header__title">Job Details</p>
+            <li className="">
+                <a href="#" className="">
 
                 </a>
-                <a>
-                    
+                <a href="#" className="">
+
                 </a>
             </li>
         </header>
