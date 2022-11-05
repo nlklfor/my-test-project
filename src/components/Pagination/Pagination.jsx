@@ -7,7 +7,7 @@ const Pagination = (props) => {
     }
     return (
         <div>
-            <ul className="pagination">
+            <ul className="pagination flex">
                 {
                     pageCount.map(count => (
                         <li className="pagintaion__page-item" key={count}>

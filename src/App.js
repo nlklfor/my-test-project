@@ -4,15 +4,15 @@ import axios from 'axios';
 import './App.css';
 import VacanciesList from './components/VacanciesList/VacanciesList';
 import Pagination from './components/Pagination/Pagination';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, withRouter } from 'react-router-dom';
 import Vacancy from './components/Vacancy/Vacancy';
+import './components/Normalize.css'
 
 
 function App() {
 
-
-
-
+  // // let UrlDataContent = withRouter(Vacancy);
+  // let vacancyId = this.match.params.vacancyId;
   const [vacancies, setVacancies] = useState([]);
   const [currentPage, setCurrentPage] = useState([1]);
   const [vacanciesOnPage] = useState([15]);
@@ -21,6 +21,7 @@ function App() {
     baseURL: 'https://api.json-generator.com/templates/ZM1r0eic3XEy',
     headers: { 'Authorization': 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu' }
   });
+
   useEffect(() => {
     const getVacancies = async () => {
       setLoading(true)
@@ -40,16 +41,17 @@ function App() {
   const paginate = (pageCount) => {
     setCurrentPage(pageCount)
   }
+  console.log(vacancies);
   return (
     <div className="wrapper bg-slate-200">
       <Routes>
-        <Route path='/vacancy/:vacancyId' element={<Vacancy />}/>
-        <Route path='/' element={<VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate}/>}/>
+        <Route path='/vacancy/:vacancyId' element={<Vacancy vacancies={vacancies} loading={loading} />} />
+        <Route path='/' element={<VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} />} />
       </Routes>
       {/* <VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} /> */}
       {/* <Pagination vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} /> */}
-      
-      
+
+
     </div>
   );
 }
