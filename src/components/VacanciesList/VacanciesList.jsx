@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
-
+import styles from '../../App.module.scss'
 
 const Vacancies = (props) => {
 
@@ -14,11 +14,11 @@ const Vacancies = (props) => {
                     {
                         props.vacancies.map((vacancy) => (
                             <NavLink className="" to={"/vacancy/" + vacancy.id}>
-                                <li className="vac__list-item bg-white border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between">
-                                    <img src={vacancy.pictures[0]} className="vac__list-img rounded-full mr-6 ml-4 mb-8" width="85" height="85" />
+                                <li className={styles.vac__item}>
+                                    <img src={vacancy.pictures[0]} className={styles.vac__img} width="85" height="85" alt="" />
                                     <div className="vac__list-info">
-                                        <p className="list-item-title font-bold text-slate-700">{vacancy.title}</p>
-                                        <p className="list-item-name text-slate-400 pt-2">Department name • {vacancy.name}</p>
+                                        <p className={styles.list__title}>{vacancy.title}</p>
+                                        <p className={styles.list__name}>Department name • {vacancy.name}</p>
                                         <div className="vac__list-location flex pt-4">
                                             <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 18C6.5 18 13 11.9706 13 7C13 2.02944 10.0899 0 6.5 0C2.91015 0 0 2.02944 0 7C0 11.9706 6.5 18 6.5 18ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10Z" fill="#878D9D" />
