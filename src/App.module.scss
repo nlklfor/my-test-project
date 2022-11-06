@@ -90,14 +90,14 @@
    @apply flex text-sky-900 bg-gray-500 rounded-lg px-9 py-5 font-semibold bg-opacity-10 ml-48 mt-28 border-none hover:bg-opacity-50 focus:bg-opacity-50 transition-all;
 }
 .vac__item{
-    @apply bg-slate-100 border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between hover:shadow-xl transition-all max-lg:flex-col max-lg:h-64 max-lg:w-1/2;
+    @apply bg-slate-100 border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between hover:shadow-xl transition-all max-lg:flex-col max-lg:h-64 max-lg:w-1/2 max-lg:block ;
 }
 .vac__img{
-    @apply rounded-full mr-6 ml-4 mb-8;
+    @apply  rounded-full w-20 h-20;
 }
 .list__title{
-    @apply  font-bold text-slate-700;
+    @apply  font-bold text-slate-700 max-md:text-sm;
 }
 .list__name{
-    @apply text-slate-400 pt-2;
+    @apply text-slate-400 pt-2 max-md:text-sm;
 }

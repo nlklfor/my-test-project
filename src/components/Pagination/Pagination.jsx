@@ -7,7 +7,7 @@ const Pagination = (props) => {
     }
     return (
         <div>
-            <ul className="pagination flex justify-center pt-10 pb-10  rounded-lg border-r-2 border-l-2 border-slate-500">
+            <ul className="pagination flex justify-center pt-10 pb-10">
                 <svg>
 
                 </svg>

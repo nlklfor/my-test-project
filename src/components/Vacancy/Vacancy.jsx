@@ -151,7 +151,7 @@ const Vacancy = (props) => {
                                                 </ul>  
                                             </div>
                                         </div>
-                                        <div className="vacancy__card-wrapper absolute right-32 top-20  max-2xl:relative max-2xl:bottom-0 max-2xl:left-1/4">
+                                        <div className="vacancy__card-wrapper absolute right-32 top-20 m-0  max-2xl:relative max-2xl:bottom-0 max-2xl:left-1/4">
                                             <h2 className={styles.vacancy__title}>Contacts</h2>
                                             <div className={styles.vacancy__card}>
                                                 <div className="vacancy__card-info">
