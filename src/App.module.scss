@@ -1,15 +1,21 @@
 .vacancy__card{
-    @apply absolute right-32 top-20 bg-[url('./img/Map.png')] bg-slate-800 w-96 h-96 bg-auto mb-32 flex justify-center rounded-lg;
+    @apply bg-[url('./img/Map.png')] bg-slate-800 w-96 h-96 bg-auto mb-32 flex justify-center rounded-lg;
 }
 .info__name{
     @apply text-white font-semibold text-lg mb-2 mt-10;
 }
 .vacancy__header{
-    @apply flex justify-between w-2/5 m-auto pt-20 border-b border-slate-300 ;
+    @apply flex justify-between w-2/5 m-auto pt-20 border-b border-slate-300 max-lg:flex-col;
     
+}
+.vacancy__options{
+    @apply  flex max-lg:pb-10;
 }
 .vacancy__title{
     @apply text-3xl font-bold text-slate-700 pb-5;
+}
+.vacancy__content{
+    @apply  w-2/5 m-auto max-lg:pt-8;
 }
 .info{
     @apply text-white mb-3;
@@ -27,7 +33,10 @@
     @apply text-slate-600 ml-4;
 }
 .apply__btn{
-    @apply bg-sky-900 text-slate-50 border rounded-lg px-10 py-5 mt-14 mb-14 hover:bg-opacity-70 focus:bg-opacity-70 transition-all;
+    @apply bg-sky-900 text-slate-50 border rounded-lg px-10 py-5 mt-10 mb-10 hover:bg-opacity-70 focus:bg-opacity-70 transition-all;
+}
+.apply__btn_none{
+    @apply bg-sky-900 text-slate-50 border rounded-lg px-10 py-5 mt-14 mb-14 hover:bg-opacity-70 focus:bg-opacity-70 transition-all max-lg:hidden;
 }
 .vacancy__name{
     @apply  text-2xl font-semibold text-sky-900 w-1/2;
@@ -63,13 +72,13 @@
     @apply  text-sky-900 text-xl pb-3 pt-4;
 }
 .employee__btn{
-    @apply  bg-slate-600 text-sky-700 border border-slate-400 rounded-lg px-20 py-5 font-semibold mr-4 bg-opacity-10 hover:bg-sky-700 hover:text-white focus:bg-sky-700 focus:text-white transition-all
+    @apply  bg-slate-600 text-sky-700 border border-slate-400 rounded-lg px-20 py-5 font-semibold mr-4 bg-opacity-10 hover:bg-sky-700 hover:text-white focus:bg-sky-700 focus:text-white transition-all max-lg:px-10 max-sm:px-5;
 }
 .benefits__title{
     @apply  text-sky-900 text-xl pb-3;
 }
 .benefits__btn{
-    @apply bg-amber-400 text-yellow-700 border border-yellow-500 rounded-lg px-20 py-5 mb-14 font-semibold mr-4 bg-opacity-5 hover:bg-yellow-500 hover:text-white focus:bg-yellow-500 focus:text-white hover:border-yellow-600 focus:border-yellow-600 transition-all;
+    @apply bg-amber-400 text-yellow-700 border border-yellow-500 rounded-lg px-20 py-5 mb-14 font-semibold mr-4 bg-opacity-5 hover:bg-yellow-500 hover:text-white focus:bg-yellow-500 focus:text-white hover:border-yellow-600 focus:border-yellow-600 transition-all max-lg:px-10 max-sm:px-5;
 }
 .images__title{
     @apply  border-b border-slate-300 text-3xl font-bold text-slate-700 pb-3;
@@ -78,10 +87,10 @@
     @apply rounded-lg w-80 h-36 mr-6 hover:shadow-2xl transition-all
 }
 .button__return{
-   @apply flex text-sky-900 bg-gray-500 rounded-lg px-9 py-5 font-semibold bg-opacity-10 ml-48 border-none hover:bg-opacity-50 focus:bg-opacity-50 transition-all;
+   @apply flex text-sky-900 bg-gray-500 rounded-lg px-9 py-5 font-semibold bg-opacity-10 ml-48 mt-28 border-none hover:bg-opacity-50 focus:bg-opacity-50 transition-all;
 }
 .vac__item{
-    @apply bg-white border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between;
+    @apply bg-slate-100 border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between hover:shadow-xl transition-all max-lg:flex-col max-lg:h-64 max-lg:w-1/2;
 }
 .vac__img{
     @apply rounded-full mr-6 ml-4 mb-8;

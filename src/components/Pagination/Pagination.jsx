@@ -8,6 +8,9 @@ const Pagination = (props) => {
     return (
         <div>
             <ul className="pagination flex justify-center pt-10 pb-10  rounded-lg border-r-2 border-l-2 border-slate-500">
+                <svg>
+
+                </svg>
                 {
                     pageCount.map(count => (
                         <li className="pagintaion__page-item bg-white shadow-xl rounded-lg" key={count}>
@@ -17,6 +20,9 @@ const Pagination = (props) => {
                         </li>
                     ))
                 }
+                <svg>
+                    
+                </svg>
             </ul>
         </div>
         

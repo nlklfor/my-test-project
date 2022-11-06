@@ -18,28 +18,9 @@ const Vacancy = (props) => {
                         if (vacancy.id === vacancyId) {
                             return (   
                                 <div className="vacancy-wrapper bg-slate-200"> 
-                                        <div className={styles.vacancy__card}>
-                                            <div className="vacancy__card-info">
-                                                <p className={styles.info__name}>
-                                                    Department name. {vacancy.name}.
-                                                </p>
-                                                <p className={styles.info__address}>
-                                                <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 18C6.5 18 13 11.9706 13 7C13 2.02944 10.0899 0 6.5 0C2.91015 0 0 2.02944 0 7C0 11.9706 6.5 18 6.5 18ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10Z" fill="#878D9D"/>
-                                                </svg>
-                                                    {vacancy.address}
-                                                </p>
-                                                <p className={styles.info}>
-                                                    {vacancy.phone} ,
-                                                </p>
-                                                <p className={styles.info}>
-                                                    {vacancy.email}
-                                                </p>
-                                            </div>
-                                        </div>
                                     <div className={styles.vacancy__header}>
                                         <h2 className={styles.vacancy__title}>Job Details</h2>
-                                        <div className="vacancy__options flex">
+                                        <div className={styles.vacancy__options}>
                                             <div className="vacancy__save flex mr-8 pt-3">
                                                 <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.save__vacancy}>
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 4.00016C1.5 2.5274 2.69391 1.3335 4.16667 1.3335H14.8333C16.3061 1.3335 17.5 2.5274 17.5 4.00016V19.9936C17.5 21.1595 16.109 21.7639 15.2567 20.9682L10.4099 16.4428C9.89761 15.9645 9.10239 15.9645 8.59007 16.4428L3.74327 20.9682C2.89104 21.7639 1.5 21.1595 1.5 19.9936V4.00016Z" stroke="#70778B" stroke-width="2"/>
@@ -65,8 +46,8 @@ const Vacancy = (props) => {
                                             </div>
                                         </div>
                                     </div> 
-                                    <div className="vacancy__content w-2/5 m-auto">
-                                        <button className={styles.apply__btn}>
+                                    <div className={styles.vacancy__content}>
+                                        <button className={styles.apply__btn_none}>
                                             APPLY NOW
                                         </button>
                                         <div className="vacancy__top m-auto">
@@ -120,9 +101,11 @@ const Vacancy = (props) => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button className={styles.apply__btn}>
-                                            APPLY NOW
-                                        </button>
+                                        <div className="button__wrapper flex max-lg:justify-center">
+                                            <button className={styles.apply__btn}>
+                                                APPLY NOW
+                                            </button>
+                                        </div>
                                         <div className="add-info">
                                             <h2 className={styles.addinfo__title}>
                                                 Additional info
@@ -157,7 +140,7 @@ const Vacancy = (props) => {
                                                     </button>
                                                 </ul>  
                                             </div>
-                                            <div className="add-info__images pb-36">
+                                            <div className="add-info__images pb-18">
                                                 <h2 className={styles.images__title}>
                                                     Attached Images
                                                 </h2>
@@ -166,6 +149,28 @@ const Vacancy = (props) => {
                                                     <img src={vacancy.pictures[1]} className={styles.image} alt=""></img>
                                                     <img src={vacancy.pictures[2]} className={styles.image} alt=""></img>
                                                 </ul>  
+                                            </div>
+                                        </div>
+                                        <div className="vacancy__card-wrapper absolute right-32 top-20  max-2xl:relative max-2xl:bottom-0 max-2xl:left-1/4">
+                                            <h2 className={styles.vacancy__title}>Contacts</h2>
+                                            <div className={styles.vacancy__card}>
+                                                <div className="vacancy__card-info">
+                                                    <p className={styles.info__name}>
+                                                        Department name. {vacancy.name}.
+                                                    </p>
+                                                    <p className={styles.info__address}>
+                                                    <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 18C6.5 18 13 11.9706 13 7C13 2.02944 10.0899 0 6.5 0C2.91015 0 0 2.02944 0 7C0 11.9706 6.5 18 6.5 18ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10Z" fill="#878D9D"/>
+                                                    </svg>
+                                                        {vacancy.address}
+                                                    </p>
+                                                    <p className={styles.info}>
+                                                        {vacancy.phone} ,
+                                                    </p>
+                                                    <p className={styles.info}>
+                                                        {vacancy.email}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="button__return pb-20">
@@ -178,7 +183,6 @@ const Vacancy = (props) => {
                                             </button>
                                             </NavLink>
                                         </div>
-                                        
                                     </div>
                                     
                             )
