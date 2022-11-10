@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nlklfor/my-test-project/static/css/main.a2642a94.css",
+    "main.js": "/nlklfor/my-test-project/static/js/main.7b739dbc.js",
+    "static/js/787.b3fd989f.chunk.js": "/nlklfor/my-test-project/static/js/787.b3fd989f.chunk.js",
+    "static/media/Map.png": "/nlklfor/my-test-project/static/media/Map.d065e9d1c4bae506a91c.png",
+    "index.html": "/nlklfor/my-test-project/index.html",
+    "main.a2642a94.css.map": "/nlklfor/my-test-project/static/css/main.a2642a94.css.map",
+    "main.7b739dbc.js.map": "/nlklfor/my-test-project/static/js/main.7b739dbc.js.map",
+    "787.b3fd989f.chunk.js.map": "/nlklfor/my-test-project/static/js/787.b3fd989f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2642a94.css",
+    "static/js/main.7b739dbc.js"
+  ]
+}
