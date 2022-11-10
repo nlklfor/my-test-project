@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import VacanciesList from './components/VacanciesList/VacanciesList';
+import VacanciesList from './Pages/VacanciesList/VacanciesList';
 import { Route, Routes } from 'react-router-dom';
-import Vacancy from './components/Vacancy/Vacancy';
 import './components/Normalize.css'
+import VacancyPage from './Pages/VacancyPage/VacancyPage';
 
 
 
@@ -42,7 +42,7 @@ function App(props) {
   return (
     <div className="wrapper bg-slate-200">
       <Routes>
-        <Route path='/vacancy/:vacancyId' element={<Vacancy vacancies={vacancies} loading={loading} />} />
+        <Route path='/vacancy/:vacancyId' element={<VacancyPage vacancies={vacancies} loading={loading} />} />
         <Route path='/' element={<VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} />} />
       </Routes>
     </div>

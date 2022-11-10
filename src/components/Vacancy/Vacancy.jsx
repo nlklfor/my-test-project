@@ -1,217 +1,48 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import styles from '../../App.module.scss'
-// import "./Header.css"
+
 
 const Vacancy = (props) => {
+    return (
+        <NavLink className="" to={"/vacancy/" + props.vacancy.id}>
+            <li className={styles.vac__item}>
+                <div className="wrapper">
+                    <div className="info flex">
+                        <div className="img ml-6">
+                            <img src={props.vacancy.pictures[0]} className={styles.vac__img} width="" height="" alt="" />
+                        </div>
+                        <div className="desc flex-col ml-12">
+                            <p className={styles.list__title}>{props.vacancy.title}</p>
+                            <p className={styles.list__name}>Department name • {props.vacancy.name}</p>
+                            <div className="location flex pt-4">
+                                <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 18C6.5 18 13 11.9706 13 7C13 2.02944 10.0899 0 6.5 0C2.91015 0 0 2.02944 0 7C0 11.9706 6.5 18 6.5 18ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10Z" fill="#878D9D" />
+                                </svg>
+                                <p className="location px-2 text-slate-400 max-md:text-sm">{props.vacancy.location.lat} : {props.vacancy.location.long}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="ab max-lg:flex">
+                    <div className="rt flex">
+                        <svg width="96" height="18" viewBox="0 0 96 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-10 mr-28 w-36 max-lg:w-16 max-lg:fill-slate-500 max-lg:ml-9 max-lg:mr-4">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.69871 4.58966C7.42979 2.93116 8.82013 0.000488281 9.51634 0.000488281C10.5274 -0.000511719 12.7421 5.68649 12.7421 5.68649C12.7421 5.68649 14.7923 5.86549 16.4493 6.04849C17.3289 6.14549 18.8997 6.29349 18.998 6.77849C19.019 6.88349 18.8927 7.31249 18.663 7.61149C17.69 8.88149 15.1654 11.6025 15.1654 11.6025C15.1654 11.6025 15.3038 12.9025 15.4272 14.3245C15.5064 15.2445 15.7201 17.1085 15.6428 17.4415C15.5586 17.8085 15.4071 17.9085 15.2497 17.9665C14.8384 18.1165 13.8835 17.5335 12.7682 16.9995C11.2486 16.2705 9.54141 15.4915 9.54141 15.4915C9.54141 15.4915 8.41501 16.0805 7.07998 16.6555C5.65367 17.2695 4.20931 18.2815 3.60649 17.9255C3.23035 17.7025 3.50919 15.9645 3.65363 14.4175C3.78904 12.9585 3.90639 11.6255 3.90639 11.6255C3.90639 11.6255 3.06987 10.6435 2.09592 9.59349C1.04375 8.45849 -0.239128 7.23349 0.0387113 6.78349C0.248344 6.44349 1.20523 6.26149 2.81209 6.06249C4.51924 5.85049 6.22439 5.70049 6.22439 5.70049C6.22439 5.70049 6.41022 5.24412 6.69871 4.58966Z" fill="#38415D" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.6987 4.58966C26.4298 2.93116 27.8201 0.000488281 28.5163 0.000488281C29.5274 -0.000511719 31.7421 5.68649 31.7421 5.68649C31.7421 5.68649 33.7923 5.86549 35.4493 6.04849C36.3289 6.14549 37.8997 6.29349 37.998 6.77849C38.019 6.88349 37.8927 7.31249 37.663 7.61149C36.69 8.88149 34.1654 11.6025 34.1654 11.6025C34.1654 11.6025 34.3038 12.9025 34.4272 14.3245C34.5064 15.2445 34.7201 17.1085 34.6428 17.4415C34.5586 17.8085 34.4071 17.9085 34.2497 17.9665C33.8384 18.1165 32.8835 17.5335 31.7682 16.9995C30.2486 16.2705 28.5414 15.4915 28.5414 15.4915C28.5414 15.4915 27.415 16.0805 26.08 16.6555C24.6537 17.2695 23.2093 18.2815 22.6065 17.9255C22.2304 17.7025 22.5092 15.9645 22.6536 14.4175C22.789 12.9585 22.9064 11.6255 22.9064 11.6255C22.9064 11.6255 22.0699 10.6435 21.0959 9.59349C20.0437 8.45849 18.7609 7.23349 19.0387 6.78349C19.2483 6.44349 20.2052 6.26149 21.8121 6.06249C23.5192 5.85049 25.2244 5.70049 25.2244 5.70049C25.2244 5.70049 25.4102 5.24412 25.6987 4.58966Z" fill="#38415D" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M44.6987 4.58966C45.4298 2.93116 46.8201 0.000488281 47.5163 0.000488281C48.5274 -0.000511719 50.7421 5.68649 50.7421 5.68649C50.7421 5.68649 52.7923 5.86549 54.4493 6.04849C55.3289 6.14549 56.8997 6.29349 56.998 6.77849C57.019 6.88349 56.8927 7.31249 56.663 7.61149C55.69 8.88149 53.1654 11.6025 53.1654 11.6025C53.1654 11.6025 53.3038 12.9025 53.4272 14.3245C53.5064 15.2445 53.7201 17.1085 53.6428 17.4415C53.5586 17.8085 53.4071 17.9085 53.2497 17.9665C52.8384 18.1165 51.8835 17.5335 50.7682 16.9995C49.2486 16.2705 47.5414 15.4915 47.5414 15.4915C47.5414 15.4915 46.415 16.0805 45.08 16.6555C43.6537 17.2695 42.2093 18.2815 41.6065 17.9255C41.2304 17.7025 41.5092 15.9645 41.6536 14.4175C41.789 12.9585 41.9064 11.6255 41.9064 11.6255C41.9064 11.6255 41.0699 10.6435 40.0959 9.59349C39.0437 8.45849 37.7609 7.23349 38.0387 6.78349C38.2483 6.44349 39.2052 6.26149 40.8121 6.06249C42.5192 5.85049 44.2244 5.70049 44.2244 5.70049C44.2244 5.70049 44.4102 5.24412 44.6987 4.58966Z" fill="#38415D" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M64.6987 4.58966C65.4298 2.93116 66.8201 0.000488281 67.5163 0.000488281C68.5274 -0.000511719 70.7421 5.68649 70.7421 5.68649C70.7421 5.68649 72.7923 5.86549 74.4493 6.04849C75.3289 6.14549 76.8997 6.29349 76.998 6.77849C77.019 6.88349 76.8927 7.31249 76.663 7.61149C75.69 8.88149 73.1654 11.6025 73.1654 11.6025C73.1654 11.6025 73.3038 12.9025 73.4272 14.3245C73.5064 15.2445 73.7201 17.1085 73.6428 17.4415C73.5586 17.8085 73.4071 17.9085 73.2497 17.9665C72.8384 18.1165 71.8835 17.5335 70.7682 16.9995C69.2486 16.2705 67.5414 15.4915 67.5414 15.4915C67.5414 15.4915 66.415 16.0805 65.08 16.6555C63.6537 17.2695 62.2093 18.2815 61.6065 17.9255C61.2304 17.7025 61.5092 15.9645 61.6536 14.4175C61.789 12.9585 61.9064 11.6255 61.9064 11.6255C61.9064 11.6255 61.0699 10.6435 60.0959 9.59349C59.0437 8.45849 57.7609 7.23349 58.0387 6.78349C58.2483 6.44349 59.2052 6.26149 60.8121 6.06249C62.5192 5.85049 64.2244 5.70049 64.2244 5.70049C64.2244 5.70049 64.4102 5.24412 64.6987 4.58966Z" fill="#38415D" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M83.6987 4.58966C84.4298 2.93116 85.8201 0.000488281 86.5163 0.000488281C87.5274 -0.000511719 89.7421 5.68649 89.7421 5.68649C89.7421 5.68649 91.7923 5.86549 93.4493 6.04849C94.3289 6.14549 95.8997 6.29349 95.998 6.77849C96.019 6.88349 95.8927 7.31249 95.663 7.61149C94.69 8.88149 92.1654 11.6025 92.1654 11.6025C92.1654 11.6025 92.3038 12.9025 92.4272 14.3245C92.5064 15.2445 92.7201 17.1085 92.6428 17.4415C92.5586 17.8085 92.4071 17.9085 92.2497 17.9665C91.8384 18.1165 90.8835 17.5335 89.7682 16.9995C88.2486 16.2705 86.5414 15.4915 86.5414 15.4915C86.5414 15.4915 85.415 16.0805 84.08 16.6555C82.6537 17.2695 81.2093 18.2815 80.6065 17.9255C80.2304 17.7025 80.5092 15.9645 80.6536 14.4175C80.789 12.9585 80.9064 11.6255 80.9064 11.6255C80.9064 11.6255 80.0699 10.6435 79.0959 9.59349C78.0437 8.45849 76.7609 7.23349 77.0387 6.78349C77.2483 6.44349 78.2052 6.26149 79.8121 6.06249C81.5192 5.85049 83.2244 5.70049 83.2244 5.70049C83.2244 5.70049 83.4102 5.24412 83.6987 4.58966Z" fill="#38415D" />
+                        </svg>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3 max-lg:hidden ">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8.00016C8 6.5274 9.19391 5.3335 10.6667 5.3335H21.3333C22.8061 5.3335 24 6.5274 24 8.00016V23.9936C24 25.1595 22.609 25.7639 21.7567 24.9682L16.9099 20.4428C16.3976 19.9645 15.6024 19.9645 15.0901 20.4428L10.2433 24.9682C9.39104 25.7639 8 25.1595 8 23.9936V8.00016Z" stroke="#70778B" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <p className="mt-6 mr-4 text-slate-400 max-lg:mt-10 max-md:text-sm max-md:pr-20 max-md:mt-2"> Posted at {props.vacancy.createdAt}</p>
+                </div>
+            </li>
+        </NavLink>
+    )
+}
 
-    const { vacancyId } = useParams();
-    if (props.loading) {
-        return <p className="">Loading...</p>
-    } else {
-        console.log(props.vacancies);
-        return (
-            <>
-                {
-                    props.vacancies.map(vacancy => {
-                        if (vacancy.id === vacancyId) {
-                            return (   
-                                <div className="vacancy-wrapper bg-slate-200"> 
-                                    <div className={styles.vacancy__header}>
-                                        <h2 className={styles.vacancy__title}>Job Details</h2>
-                                        <div className={styles.vacancy__options}>
-                                            <div className="vacancy__save flex mr-8 pt-3">
-                                                <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.save__vacancy}>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 4.00016C1.5 2.5274 2.69391 1.3335 4.16667 1.3335H14.8333C16.3061 1.3335 17.5 2.5274 17.5 4.00016V19.9936C17.5 21.1595 16.109 21.7639 15.2567 20.9682L10.4099 16.4428C9.89761 15.9645 9.10239 15.9645 8.59007 16.4428L3.74327 20.9682C2.89104 21.7639 1.5 21.1595 1.5 19.9936V4.00016Z" stroke="#70778B" stroke-width="2"/>
-                                                </svg>
-                                                <p className={styles.btn__text}>
-                                                    Save to my list
-                                                </p>
-                                            </div>
-                                            <div className="vacancy__share flex pt-3">
-                                                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.share__vacancy}>
-                                                    <g clip-path="url(#clip0_4267_1463)">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.54 14.9096L6.41 10.743C6.46 10.512 6.5 10.2811 6.5 10.0402C6.5 9.7992 6.46 9.56827 6.41 9.33735L13.46 5.21084C14 5.71285 14.71 6.0241 15.5 6.0241C17.16 6.0241 18.5 4.67871 18.5 3.01205C18.5 1.34538 17.16 0 15.5 0C13.84 0 12.5 1.34538 12.5 3.01205C12.5 3.25301 12.54 3.48394 12.59 3.71486L5.54 7.84137C5 7.33936 4.29 7.02811 3.5 7.02811C1.84 7.02811 0.5 8.37349 0.5 10.0402C0.5 11.7068 1.84 13.0522 3.5 13.0522C4.29 13.0522 5 12.741 5.54 12.239L12.66 16.4157C12.61 16.6265 12.58 16.8474 12.58 17.0683C12.58 18.6847 13.89 20 15.5 20C17.11 20 18.42 18.6847 18.42 17.0683C18.42 15.4518 17.11 14.1365 15.5 14.1365C14.74 14.1365 14.06 14.4378 13.54 14.9096Z" fill="#70778B"/>
-                                                    </g>
-                                                    <defs>
-                                                    <clipPath id="clip0_4267_1463">
-                                                    <rect width="18" height="20" fill="white" transform="translate(0.5)"/>
-                                                    </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <p className={styles.btn__text}>
-                                                    Share
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div className={styles.vacancy__content}>
-                                        <button className={styles.apply__btn_none}>
-                                            APPLY NOW
-                                        </button>
-                                        <div className="vacancy__top m-auto">
-                                            <div className="vacancy__desc flex justify-between">
-                                                <p className={styles.vacancy__name}>
-                                                    {vacancy.name}
-                                                </p>
-                                                <div className="vacancy__salary">
-                                                    <p className={styles.vacancy__salary}>
-                                                        € {vacancy.salary}
-                                                    </p>
-                                                    <p className="vacancy__amount-year text-sky-900">
-                                                        Brutto, per year
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p className={styles.vacancy__posted}> 
-                                            Posted at {vacancy.createdAt}
-                                        </p>
-                                        <p className={styles.vacancy__title-2}>
-                                            {vacancy.title}
-                                        </p>
-                                        <div className="respons">
-                                            <p className={styles.response__title}>
-                                                Responsibilities
-                                            </p>
-                                            <p className={styles.response__desc}>
-                                                {vacancy.description}
-                                            </p>    
-                                        </div>
-                                        <div className="compensation">
-                                            <p className={styles.compensation__title}>
-                                                Compensation & Benefits:
-                                            </p>
-                                            <p className={styles.compensation__subtitle}>
-                                                Our physician enjoy a wide range of benefits, including:
-                                            </p>
-                                            <ul className={styles.compensation__list}>
-                                                <li className="compensation__list-item">
-                                                    Very competitve compensation package with bonuses
-                                                </li>
-                                                <li className="compensation__list-item">
-                                                    Medical ,Dental, and Vision Insurance
-                                                </li>   
-                                                <li className="compensation__list-item">
-                                                    Occurrence-based Malpractice Coverage
-                                                </li>
-                                                <li className="compensation__list-item">
-                                                    Short-term and Long-term Disability Insurance and life insurance
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="button__wrapper flex max-lg:justify-center">
-                                            <button className={styles.apply__btn}>
-                                                APPLY NOW
-                                            </button>
-                                        </div>
-                                        <div className="add-info">
-                                            <h2 className={styles.addinfo__title}>
-                                                Additional info
-                                            </h2>
-                                            <div className="add-info__employee">
-                                                <p className={styles.employee__title}>
-                                                    Employee Type
-                                                </p>
-                                                <ul className="employee__btns flex pb-6">
-                                                    <button className={styles.employee__btn}>
-                                                        Full time
-                                                    </button>
-                                                    <button className={styles.employee__btn}>
-                                                        Part time
-                                                    </button>
-                                                    <button className={styles.employee__btn}>
-                                                        Temporary
-                                                    </button>
-                                                </ul>  
-                                            </div>
-                                          </div>  
-                                            <div className="add-info__benefits">
-                                                <p className={styles.benefits__title}>
-                                                    Benefits
-                                                </p>
-                                                <ul className="benefits__btns flex">
-                                                    <button className={styles.benefits__btn}>
-                                                        Flexible schedule
-                                                    </button>
-                                                    <button className={styles.benefits__btn}>
-                                                        Relocation assistance
-                                                    </button>
-                                                </ul>  
-                                            </div>
-                                            <div className="add-info__images pb-18">
-                                                <h2 className={styles.images__title}>
-                                                    Attached Images
-                                                </h2>
-                                                <ul className="images flex pt-6">
-                                                    <img src={vacancy.pictures[0]} className={styles.image} alt=""></img>
-                                                    <img src={vacancy.pictures[1]} className={styles.image} alt=""></img>
-                                                    <img src={vacancy.pictures[2]} className={styles.image} alt=""></img>
-                                                </ul>  
-                                            </div>
-                                        </div>
-                                        <div className="vacancy__card-wrapper absolute right-32 top-20 m-0  max-2xl:relative max-2xl:bottom-0 max-2xl:left-1/4">
-                                            <h2 className={styles.vacancy__title}>Contacts</h2>
-                                            <div className={styles.vacancy__card}>
-                                                <div className="vacancy__card-info">
-                                                    <p className={styles.info__name}>
-                                                        Department name. {vacancy.name}.
-                                                    </p>
-                                                    <p className={styles.info__address}>
-                                                    <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 18C6.5 18 13 11.9706 13 7C13 2.02944 10.0899 0 6.5 0C2.91015 0 0 2.02944 0 7C0 11.9706 6.5 18 6.5 18ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10Z" fill="#878D9D"/>
-                                                    </svg>
-                                                        {vacancy.address}
-                                                    </p>
-                                                    <p className={styles.info}>
-                                                        {vacancy.phone} ,
-                                                    </p>
-                                                    <p className={styles.info}>
-                                                        {vacancy.email}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="button__return pb-20">
-                                            <NavLink to={"/"}>
-                                            <button className={styles.button__return}>
-                                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.66053 0.401157C10.1272 0.915451 10.108 1.72975 9.61804 2.21833L3.37247 8.69844C3.21164 8.8613 3.21164 9.13559 3.37247 9.29845L9.62137 15.7786C10.1105 16.2671 10.128 17.0814 9.66053 17.5957C9.19305 18.1186 8.41725 18.1357 7.92894 17.6386L0.390931 9.96703C-0.114047 9.45274 -0.13238 8.61272 0.350933 8.08129L7.92894 0.358299C8.41809 -0.138852 9.19389 -0.113138 9.66053 0.401157Z" fill="#384564"/>
-                                            </svg>
-                                            RETURN TO JOB BOARD
-                                            </button>
-                                            </NavLink>
-                                        </div>
-                                    </div>
-                                    
-                            )
-                        }
-                    })
-                }
-            </>
-            )
-        }
-        
-    }
-    
-    export default Vacancy;
-    
-    // let vacancy = {};
-    //  for (let i=0 ; i < props.vacancies.length ; i++){
-    //     if (props.vacancies[i].id = vacancyId) {
-        //         vacancy = props.vacancies[i]
-        //         break;
-        //     }
-        //  }
-        // <header className="header">
-        //  <p className="header__title">Job Details</p>
-        //     <li className="">
-        //         <a href="#" className="">
-        //             {vacancy.name}
-        //         </a>
-        //         <a href="#" className="">
-        
-        //         </a>
-        //     </li>
-        // </header>
+
+export default Vacancy;

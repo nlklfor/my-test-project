@@ -1,5 +1,5 @@
 .vacancy__card{
-    @apply bg-[url('./img/Map.png')] bg-slate-800 w-96 h-96 bg-auto mb-32 flex justify-center rounded-lg;
+    @apply bg-[url('./assets/img/Map.png')] bg-slate-800 w-96 h-96 bg-auto mb-32 flex justify-center rounded-lg max-sm:w-80;
 }
 .info__name{
     @apply text-white font-semibold text-lg mb-2 mt-10;
@@ -47,7 +47,7 @@
 .vacancy__posted{
     @apply  text-slate-400 pt-3 pb-3;
 }
-.vacancy__title-2{
+.vacancy__title2{
     @apply  text-sky-900 pb-10 text-lg;
 }
 .response__title{
@@ -84,13 +84,13 @@
     @apply  border-b border-slate-300 text-3xl font-bold text-slate-700 pb-3;
 }
 .image{
-    @apply rounded-lg w-80 h-36 mr-6 hover:shadow-2xl transition-all
+    @apply rounded-lg w-80 h-36 mr-6 hover:shadow-2xl transition-all max-sm:mb-4;
 }
 .button__return{
-   @apply flex text-sky-900 bg-gray-500 rounded-lg px-9 py-5 font-semibold bg-opacity-10 ml-48 mt-28 border-none hover:bg-opacity-50 focus:bg-opacity-50 transition-all;
+   @apply flex text-sky-900 bg-gray-500 rounded-lg px-9 py-5 font-semibold bg-opacity-10 ml-48 mt-28 border-none hover:bg-opacity-50 focus:bg-opacity-50 transition-all max-lg:ml-0;
 }
 .vac__item{
-    @apply bg-slate-100 border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between hover:shadow-xl transition-all max-lg:flex-col max-lg:h-64 max-lg:w-1/2 max-lg:block ;
+    @apply bg-slate-100 border rounded-xl pt-7 m-auto mb-4 py-4 h-40 w-4/5 cursor-pointer flex shadow-md justify-between hover:shadow-xl transition-all max-lg:flex-col max-lg:h-72 max-lg:w-1/2 max-lg:block ;
 }
 .vac__img{
     @apply  rounded-full w-20 h-20;
