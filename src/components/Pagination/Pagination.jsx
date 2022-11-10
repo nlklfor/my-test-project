@@ -10,9 +10,7 @@ const Pagination = (props) => {
     return (
         <div>
             <ul className="pagination flex justify-center pt-10 pb-10">
-                <svg>
-
-                </svg>
+           
                 {
                     pages.map(count => (
                         <li className="item bg-white shadow-xl rounded-lg" key={count}>
@@ -22,9 +20,7 @@ const Pagination = (props) => {
                         </li>
                     ))
                 }
-                <svg>
-                    
-                </svg>
+               
             </ul>
         </div>
         
