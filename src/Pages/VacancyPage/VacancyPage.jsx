@@ -7,11 +7,10 @@ import gif from '../../assets/gif/Loading.gif'
 
 const VacancyPage = (props) => {
 
-    const { vacancyId } = useParams();
+    const { vacancyId } = useParams(); // Get the vacancyId param from the URL
     if (props.loading) {
         return <img src={gif} className="flex m-auto h-screen"></img>
     } else {
-        console.log(props.vacancies);
         const vacancy = props.vacancies.find(({id}) => id === vacancyId); // Make it so that the content that matches a certain id is rendered
             return (                   
                                 <div className="wrapper bg-slate-200"> 
@@ -181,22 +180,3 @@ const VacancyPage = (props) => {
     }
     
     export default VacancyPage;
-    
-    // let vacancy = {};
-    //  for (let i=0 ; i < props.vacancies.length ; i++){
-    //     if (props.vacancies[i].id = vacancyId) {
-        //         vacancy = props.vacancies[i]
-        //         break;
-        //     }
-        //  }
-        // <header className="header">
-        //  <p className="header__title">Job Details</p>
-        //     <li className="">
-        //         <a href="#" className="">
-        //             {vacancy.name}
-        //         </a>
-        //         <a href="#" className="">
-        
-        //         </a>
-        //     </li>
-        // </header>
