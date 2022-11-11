@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-test-project/static/css/main.050c52dc.css",
+    "main.css": "/my-test-project/static/css/main.57ac0a50.css",
     "main.js": "/my-test-project/static/js/main.ed4857d8.js",
     "static/js/787.b3fd989f.chunk.js": "/my-test-project/static/js/787.b3fd989f.chunk.js",
     "static/media/ProximaNova-Semibold.eot": "/my-test-project/static/media/ProximaNova-Semibold.4d878f520a275616509b.eot",
@@ -11,12 +11,12 @@
     "static/media/ProximaNova-Bold.woff": "/my-test-project/static/media/ProximaNova-Bold.1f267da183b3d4fe3d5b.woff",
     "static/media/ProximaNova-Semibold.woff": "/my-test-project/static/media/ProximaNova-Semibold.a71877a1eef65838ed4c.woff",
     "index.html": "/my-test-project/index.html",
-    "main.050c52dc.css.map": "/my-test-project/static/css/main.050c52dc.css.map",
+    "main.57ac0a50.css.map": "/my-test-project/static/css/main.57ac0a50.css.map",
     "main.ed4857d8.js.map": "/my-test-project/static/js/main.ed4857d8.js.map",
     "787.b3fd989f.chunk.js.map": "/my-test-project/static/js/787.b3fd989f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.050c52dc.css",
+    "static/css/main.57ac0a50.css",
     "static/js/main.ed4857d8.js"
   ]
 }
