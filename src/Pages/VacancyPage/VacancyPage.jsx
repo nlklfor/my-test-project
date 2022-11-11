@@ -2,16 +2,17 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import styles from '../../App.module.scss'
-// import "./Header.css"
+import gif from '../../assets/gif/Loading.gif'
+
 
 const VacancyPage = (props) => {
 
     const { vacancyId } = useParams();
     if (props.loading) {
-        return <p className="">Loading...</p>
+        return <img src={gif} className="flex m-auto h-screen"></img>
     } else {
         console.log(props.vacancies);
-        const vacancy = props.vacancies.find(({id}) => id === vacancyId);
+        const vacancy = props.vacancies.find(({id}) => id === vacancyId); // Make it so that the content that matches a certain id is rendered
             return (                   
                                 <div className="wrapper bg-slate-200"> 
                                     <div className={styles.vacancy__header}>

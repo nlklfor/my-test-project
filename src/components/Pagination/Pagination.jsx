@@ -1,16 +1,13 @@
 import React from "react";
 
 const Pagination = (props) => {
-    // const pageCount = [];
-    // for (let i = 1; i <= Math.ceil(props.allVacancies / props.vacanciesOnPage); i++) {
-    //     pageCount.push(i);
-    // }
-    const pageCount = Math.ceil(props.allVacancies / props.vacanciesOnPage);
-    const pages = new Array(pageCount).fill(null).map((item, i) => i + 1);
+
+    const pageCount = Math.ceil(props.allVacancies / props.vacanciesOnPage); // Counting amount of pages
+    const pages = new Array(pageCount).fill(null).map((item, i) => i + 1); // Filling array with the page numbers 
     return (
         <div>
             <ul className="pagination flex justify-center pt-10 pb-10">
-           
+
                 {
                     pages.map(count => (
                         <li className="item bg-white shadow-xl rounded-lg" key={count}>
@@ -20,10 +17,10 @@ const Pagination = (props) => {
                         </li>
                     ))
                 }
-               
+
             </ul>
         </div>
-        
+
     )
 }
 export default Pagination;

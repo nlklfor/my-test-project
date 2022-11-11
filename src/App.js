@@ -10,19 +10,21 @@ import VacancyPage from './Pages/VacancyPage/VacancyPage';
 
 function App(props) {
 
-  const [vacancies, setVacancies] = useState([]);
-    const [currentPage, setCurrentPage] = useState([1]);
+    const [vacancies, setVacancies] = useState([]);
+    const [currentPage, setCurrentPage] = useState([1]);  // Creating state for the component
     const [vacanciesOnPage] = useState([15]);
     const [loading, setLoading] = useState(false);
+     
+
     const instance = axios.create({
       baseURL: 'https://api.json-generator.com/templates/ZM1r0eic3XEy',
-      headers: { 'Authorization': 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu' }
+      headers: { 'Authorization': 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu' }  // Creating api config
     });
   
     useEffect(() => {
       const getVacancies = async () => {
         setLoading(true)
-        const tmp = await instance.get('/data');
+        const tmp = await instance.get('/data'); // Using hook useEffect to fill the state of the component
         const res = tmp.data;
         setVacancies(res)
         setLoading(false)
@@ -33,10 +35,10 @@ function App(props) {
   
     const lastVacancy = currentPage * vacanciesOnPage;
     const firstVacancy = lastVacancy - vacanciesOnPage;
-    const currentVacancy = vacancies.slice(firstVacancy, lastVacancy);
+    const currentVacancy = vacancies.slice(firstVacancy, lastVacancy); // Calculating amount of vacancies on page
   
     const paginate = (pageCount) => {
-      setCurrentPage(pageCount)
+      setCurrentPage(pageCount) 
     }
 
   return (

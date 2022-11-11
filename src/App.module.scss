@@ -1,3 +1,8 @@
+// Creating styles for components using modules
+
+
+
+
 .vacancy__card{
     @apply bg-[url('./assets/img/Map.png')] bg-slate-800 w-96 h-96 bg-auto mb-32 flex justify-center rounded-lg max-sm:w-80;
 }
