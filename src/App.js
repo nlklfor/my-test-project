@@ -38,7 +38,7 @@ function App(props) {
     <div className="wrapper bg-slate-200">
       <Routes>
         <Route path='/vacancy/:vacancyId' element={<VacancyPage vacancies={vacancies} loading={loading} />} />
-        <Route path='/' element={<VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} />} />
+        <Route path='/my-test-project' element={<VacanciesList vacancies={currentVacancy} loading={loading} vacanciesOnPage={vacanciesOnPage} allVacancies={vacancies.length} paginate={paginate} />} />
       </Routes>
     </div>
   );
